@@ -45,6 +45,8 @@ npm install
 
 To run the project, use the following command:
 
+1. Create an .env file in the root directory and add the following line: VITE_API_URL=https://dummyjson.com
+
 ```bash
 npm run dev
 ```
