@@ -47,7 +47,10 @@ const useAutoComplete = ({
 
     try {
       const suggestions = await getSuggestions(query);
-      setSearchSuggestions(suggestions);
+      const matchingSuggestions = suggestions.filter((suggestion) =>
+        suggestion.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchSuggestions(matchingSuggestions);
     } catch {
       setError("Error fetching suggestions");
       setSearchSuggestions([]);
