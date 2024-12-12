@@ -1,4 +1,4 @@
-import HighlightedSuggestion from './SuggestionHighlighted';
+import HighlightedSuggestion from "./SuggestionHighlighted";
 
 type SuggestionsProps = {
   suggestions: string[];
@@ -19,7 +19,11 @@ const Suggestions = ({
           className="suggestion-item"
           onClick={() => onSelect(suggestion)}
         >
-          <HighlightedSuggestion searchText={searchText} suggestion={suggestion} />
+          <HighlightedSuggestion
+            searchText={searchText}
+            suggestion={suggestion}
+            aria-label={`Suggestion: ${suggestion}`}
+          />
         </li>
       ))}
     </ul>

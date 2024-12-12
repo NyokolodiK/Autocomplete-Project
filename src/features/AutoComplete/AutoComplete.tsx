@@ -34,6 +34,9 @@ const AutoComplete = ({
         onFocus={onFocus}
         onBlur={onBlur}
         placeholder="Search..."
+        aria-autocomplete="list"
+        aria-controls="suggestions"
+        aria-label="Search"
       />
       <SuggestionsRenderer
         loading={loading}
@@ -42,6 +45,7 @@ const AutoComplete = ({
         showSuggestions={showSuggestions}
         searchText={textInputValue}
         onSelect={handleOnSelect}
+        aria-label="Search suggestions"
       />
     </div>
   );

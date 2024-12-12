@@ -25,6 +25,7 @@ const SuggestionsRenderer = ({
 
   return (
     <Suggestions
+      aria-label="Search suggestions"
       suggestions={suggestions}
       searchText={searchText}
       onSelect={onSelect}
