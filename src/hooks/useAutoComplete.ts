@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useDebounce from "./useDebounce";
 
 type UseAutoCompleteProps = {
@@ -24,6 +24,8 @@ const useAutoComplete = ({
   const [searchSuggestions, setSearchSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  const cache = useRef<{ [key: string]: string[] }>({});
+
   const handleInputChange = (value: string) => {
     setTextInputValue(value);
   };
@@ -39,11 +41,18 @@ const useAutoComplete = ({
     setError("");
     setShowSuggestions(true);
 
+    if (cache.current[query]) {
+      setSearchSuggestions(cache.current[query]);
+      setLoading(false);
+      return;
+    }
+
     try {
       const suggestions = await getSuggestions(query);
       const matchingSuggestions = suggestions.filter((suggestion) =>
         suggestion.toLowerCase().includes(query.toLowerCase())
       );
+      cache.current[query] = matchingSuggestions;
       setSearchSuggestions(matchingSuggestions);
     } catch {
       setError("Error fetching suggestions");
