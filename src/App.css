@@ -3,12 +3,11 @@
   border-radius: 8px;
   background-color: white;
   list-style: none;
-  padding: 8px;
-  margin: 0;
-  width: 200px;
   height: auto;
   max-height: 250px;
   overflow: auto;
+  padding: 0;
+  margin: 0;
 }
 
 .suggestion-item {
@@ -27,7 +26,6 @@ input[type="text"] {
   padding: 8px;
   border: 1px solid black;
   border-radius: 8px;
-  width: 200px;
 }
 
 .message-box {
@@ -36,8 +34,6 @@ input[type="text"] {
   background-color: white;
   list-style: none;
   padding: 8px;
-  margin: 0;
-  width: 200px;
   height: auto;
   max-height: 250px;
   overflow: auto;
@@ -47,7 +43,6 @@ input[type="text"] {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: auto;
-  max-width: 300px;
   gap: 5px;
+  padding: 20px;
 }
