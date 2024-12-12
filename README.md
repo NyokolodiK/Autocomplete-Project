@@ -40,3 +40,11 @@ To install the project, run the following command:
 ```bash
 npm install
 ```
+
+## Running the Project
+
+To run the project, use the following command:
+
+```bash
+npm run dev
+```
