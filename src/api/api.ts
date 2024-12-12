@@ -2,7 +2,7 @@ import { ProductsResponse } from "../types/Product";
 
 export const getSuggestions = async (query: string) => {
   const response = await fetch(
-    `https://dummyjson.com/products/search?q=${query}`
+    `${import.meta.env.VITE_API_URL}/products/search?q=${query}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch suggestions");
