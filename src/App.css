@@ -1,0 +1,53 @@
+.suggestions {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  width: 200px;
+  height: auto;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.suggestion-item {
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.message-box {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  width: 200px;
+  height: auto;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.autocomplete-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: 300px;
+  gap: 5px;
+}
