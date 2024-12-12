@@ -6,10 +6,6 @@ const App = () => {
   return (
     <AutoComplete
       getSuggestions={getSuggestions}
-      onSelect={console.log}
-      onChange={console.log}
-      onBlur={console.log}
-      onFocus={console.log}
     />
   )
 }

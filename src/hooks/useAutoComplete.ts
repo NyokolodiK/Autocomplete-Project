@@ -3,8 +3,6 @@ import useDebounce from "./useDebounce";
 
 type UseAutoCompleteProps = {
   getSuggestions: (query: string) => Promise<string[]>;
-  onChange: (value: string) => void;
-  onSelect: (value: string) => void;
 };
 
 type UseAutoCompleteReturn = {
@@ -19,8 +17,6 @@ type UseAutoCompleteReturn = {
 
 const useAutoComplete = ({
   getSuggestions,
-  onChange,
-  onSelect,
 }: UseAutoCompleteProps): UseAutoCompleteReturn => {
   const [textInputValue, setTextInputValue] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,12 +26,10 @@ const useAutoComplete = ({
 
   const handleInputChange = (value: string) => {
     setTextInputValue(value);
-    onChange(value);
   };
 
   const handleOnSelect = (value: string) => {
     setTextInputValue(value);
-    onSelect(value);
     setSearchSuggestions([]);
     setShowSuggestions(false);
   };

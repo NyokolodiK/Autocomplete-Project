@@ -5,16 +5,12 @@ import SuggestionsRenderer from "./Suggestions/SuggestionsRenderer";
 
 type AutoCompleteProps = {
   getSuggestions: (query: string) => Promise<string[]>;
-  onSelect: (value: string) => void;
-  onChange: (value: string) => void;
-  onBlur: () => void;
-  onFocus: () => void;
+  onBlur?: () => void;
+  onFocus?: () => void;
 };
 
 const AutoComplete = ({
   getSuggestions,
-  onSelect,
-  onChange,
   onBlur,
   onFocus,
 }: AutoCompleteProps) => {
@@ -27,9 +23,7 @@ const AutoComplete = ({
     handleInputChange,
     handleOnSelect,
   } = useAutoComplete({
-    getSuggestions,
-    onChange,
-    onSelect,
+    getSuggestions
   });
 
   return (
