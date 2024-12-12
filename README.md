@@ -48,3 +48,25 @@ To run the project, use the following command:
 ```bash
 npm run dev
 ```
+
+# Part 2: Answers to Questions
+
+1. PureComponent does not have state and it does not re-render, Compoonent does not have state and it re-renders.
+2. Context + ShouldComponentUpdate might me be dangerous because it cause unexpected behavior when not used correctly.
+3. 3 Ways that information can be passed from child to parent:
+   - Using a callback function
+   - Using state management library
+   - Using context API
+4. 2 ways to prevent component from re-rendering:
+   - Using memoization or lifecycle method in class based components such componentShouldUpdate
+5. A fragment is an invisible dom element that does not add extra dom nodes, a fragment might break the app if you pass in props
+6. 2 ways for HOC: an authentication HOC, loader HOC, HoneyBadger HOC currently being used in my work project
+7. callbacks handle exceptions by calling a callback function with exception, promises uses .then and .catch and async await uses try catch
+8. setState takes 2 arguments
+9. Steps to migrate from class based to functional component:
+   - Create a functional component
+   - change setState to useState
+   - change lifecycle methods to useEffect
+   - change usage of this e.g this.props to props
+10. To style react components, you can use module.css, inline styles or styled components
+11. setDangerouslySetInnerHTML
